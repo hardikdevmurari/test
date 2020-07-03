@@ -2,10 +2,10 @@ var mysql = require("mysql");
 
 
 var con = mysql.createConnection({
-    host:"localhost",
-    user:"root",
-    password:"",
-    database:"web",
+    host:"buyj513yr9hm9rm076vb-mysql.services.clever-cloud.com",
+    user:"u76ypadea0mjrzz9",
+    password:"u76ypadea0mjrzz9",
+    database:"buyj513yr9hm9rm076vb",
     multipleStatements: true
 });
 
