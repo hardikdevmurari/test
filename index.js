@@ -16,22 +16,22 @@ app.use(bodyParser.urlencoded({limit: "50mb", extended: true, parameterLimit:500
 app.use(cors())
 
 
-// app.use(function(req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header(
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept ,  Accept, Accept-Language,  User-Agent"
-//   );
-//   res.header('Access-Control-Allow-Methods', 'GET,PUT,OPTIONS');
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept ,  Accept, Accept-Language,  User-Agent"
+  );
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,OPTIONS');
   
-//   next();
-// });
+  next();
+});
 
 app.get('/',(req,res)=>{
   console.log('api alled');
   res.send('api is working')
 });
-// app.use('/v1/admin' , require('./routes/admin'));
+app.use('/v1/admin' , require('./routes/admin'));
 
 
 const https = http.createServer(app);
