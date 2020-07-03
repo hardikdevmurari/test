@@ -8,7 +8,7 @@ var app = express()
 //var connection = require('./connection');
 
 
-const PORT = 3000;
+const PORT = process.env.PORT;
 
 
 app.use(bodyParser.json({limit: "50mb"}));
@@ -38,7 +38,7 @@ const https = http.createServer(app);
 
 
 https.listen(PORT, function() {
- console.log("Server is running at 3000 port!");
+ console.log("Server is running !");
 });
 
 
